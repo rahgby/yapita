@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'pantalla_grabacion.dart'; // Importa la nueva pantalla de grabación
+import 'pantalla_hogar.dart';
 
 const MAPBOX_ACCESO_TOKEN = 'pk.eyJ1IjoicmFoZ2J5IiwiYSI6ImNtZ3NlYnhkcTBnN3Uya3Bvc3lja25tOGkifQ.p9yRuDERTPSVKjb3JLNs_Q';
 final myPosition = LatLng(40.97934, -73.939257);
@@ -57,6 +58,21 @@ class MapScreen extends StatelessWidget {
                 ],
               ),
             ],
+          ),
+
+          Positioned(
+            top: 20,
+            right: 20,
+            child: FloatingActionButton(
+              backgroundColor: Colors.orange,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const PantallaHogar()),
+                );
+              },
+              child: const Icon(Icons.home, color: Colors.white),
+            ),
           ),
 
           // Botón rectangular personalizado - AHORA ABRE GRABACIÓN DE VIDEO
